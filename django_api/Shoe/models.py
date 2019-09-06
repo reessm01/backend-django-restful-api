@@ -4,11 +4,20 @@ class Manufacturer(models.Model):
     name = models.CharField(max_length=50)
     website = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 class ShoeType(models.Model):
     style = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.style
+
 class ShoeColor(models.Model):
     color_name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.color_name
 
 class Shoe(models.Model):
     size = models.IntegerField()

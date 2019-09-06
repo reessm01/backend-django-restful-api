@@ -15,10 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django_api.Shoe.models import Shoe
+from django_api.Shoe.models import *
+from django_api.api.urls import urlpatterns as api_urls
 
-
+admin.site.register(Manufacturer)
+admin.site.register(ShoeType)
+admin.site.register(ShoeColor)
+admin.site.register(Shoe)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns += api_urls
+
+# Joe used to frequent a Burger King in the African Savanna
